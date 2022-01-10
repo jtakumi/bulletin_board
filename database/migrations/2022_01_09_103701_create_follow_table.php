@@ -14,15 +14,11 @@ class CreateFollowTable extends Migration
     public function up()
     {
         Schema::create('follow', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('company_id')->company();
+            $table->increments('id');
+            $table->integer('company_id');
+            $table->integer('users_id');
             $table->timestamps();
         });
-    }
-
-    public function company()
-    {
-        return hasOne('App\company');
     }
 
     /**

@@ -15,7 +15,7 @@ class CreateIndustryTable extends Migration
     {
         Schema::create('industry', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('industry_name');
+            $table->string('name');
             $table->timestamps();
         });
     }

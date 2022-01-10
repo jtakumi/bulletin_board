@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLikeTable extends Migration
+class CreateLikeQTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreateLikeTable extends Migration
      */
     public function up()
     {
-        Schema::create('like', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('like_q', function (Blueprint $table) {
+              $table->increments('id');
+            $table->integer('users_id')->unsigned();
+            $table->integer('question_id')->unsigned();
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ class CreateLikeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('like');
+        Schema::dropIfExists('like_q');
     }
 }

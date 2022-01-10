@@ -14,7 +14,11 @@ class CreateQuestionTable extends Migration
     public function up()
     {
         Schema::create('question', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->integer('users_id')->unsigned();
+            $table->text('questionText');
+            $table->text('answer');
+            $table->text('feedback')->nullable();
             $table->timestamps();
         });
     }
