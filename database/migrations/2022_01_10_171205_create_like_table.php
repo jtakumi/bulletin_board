@@ -15,21 +15,9 @@ class CreateLikeTable extends Migration
     {
         Schema::create('like', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('user_id')->users();
-            $table->string('question_id')->question();
             $table->timestamps();
         });
     }
-    
-    public function users()
-            {
-                return $this->hasOne('App\users');
-            }
-
-public function question()
-            {
-                return $this->hasOne('App\question');
-            }
 
     /**
      * Reverse the migrations.
