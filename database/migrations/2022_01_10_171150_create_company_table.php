@@ -17,6 +17,8 @@ class CreateCompanyTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->timestamps();
+            $table->unsignedBigInteger('company_id');
+            $table->foreign('company_id')->references('id')->on('company')->onDelete('cascade');
         });
     }
 

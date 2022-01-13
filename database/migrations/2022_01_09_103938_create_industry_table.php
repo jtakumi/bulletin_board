@@ -17,6 +17,8 @@ class CreateIndustryTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->timestamps();
+            $table->unsignedBigInteger('industry_id');
+            $table->foreign('industry_id')->references('id')->on('industry')->onDelete('cascade');
         });
     }
 
