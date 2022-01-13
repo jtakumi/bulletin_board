@@ -19,7 +19,7 @@ class CreateLikeQTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             #question_id
-            #外部キーの設定(user_id)
+            #外部キーの設定(question_id)
             $table->unsignedBigInteger('question_id');
             $table->foreign('question_id')->references('id')->on('question')->onDelete('cascade');
             
