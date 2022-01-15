@@ -15,11 +15,11 @@
             @csrf
             @method('PUT')
             <div class="title">
-                <h2>Title</h2>
+                <h2>質問</h2>
                 <input type="text" name="post[title]"  value="{{ $post->title }}"/>
             </div>
             <div class="body">
-                <h2>Body</h2>
+                <h2>質問内容</h2>
                 <textarea type="text" name="post[body]" placeholder="今日も一日お疲れさまでした。">
                  {{ $post->body}} </textarea>
             </div>
