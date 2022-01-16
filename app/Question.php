@@ -6,5 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Question extends Model
 {
-    //
+    protected $fillable =[
+        'industry',
+        'occupation',
+        'company',
+        'title',
+        'body',
+        'feedback',
+        ];
+    public function getPaginateByLimit(int $limit_count = 50)
+    {
+        return $this->orderBy('updated_at','DESC')->paginate($limit_count);
+    }
 }
