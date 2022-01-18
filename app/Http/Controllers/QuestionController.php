@@ -2,9 +2,85 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\QuestionRequest;
+use App\Question;
 
 class QuestionController extends Controller
 {
-    //
+    /*public function index(Question $question)
+    {
+    return view('index')->with(['question' => $question->getPaginateByLimit()]);
+    }
+    
+    public function show(Question $question)
+    {
+    return view('show')->with(['question' => $question]);
+    }
+
+    public function create()
+    {
+        return view('create');
+    }
+    
+    public function store(Question $question,QuestionRequest $request )
+    {
+        $input = $request['question'];
+        $question->fill($input)->save();
+        return redirect('/question/' . $question->id);
+    }
+    
+    public function edit(Question $question)
+    {
+        return view('edit')->with(['question' => $question]);
+    }
+    
+    public function update(Question $question,QuestionRequest $request)
+    {
+          $input = $request['question'];
+        $question->fill($input)->save();
+        return redirect('/question/' . $question->id);
+    }
+    public function delete(Question $question)
+    {
+        $question->delete();
+        return redirect('/');
+    }*/
+    public function index2(Question $question)
+    {
+    return view('index2')->with(['question' => $question->getPaginateByLimit()]);
+    }
+    
+    public function show2(Question $question)
+    {
+    return view('show2')->with(['question' => $question]);
+    }
+
+    public function create2()
+    {
+        return view('create2');
+    }
+    
+    public function store2(Question $question,QuestionRequest $request )
+    {
+        $input = $request['question'];
+        $question->fill($input)->save();
+        return redirect('/question/' . $question->id);
+    }
+    
+    public function edit2(Question $question)
+    {
+        return view('edit2')->with(['question' => $question]);
+    }
+    
+    public function update(Question $question,QuestionRequest $request)
+    {
+          $input = $request['question'];
+        $question->fill($input)->save();
+        return redirect('/question/' . $question->id);
+    }
+    public function delete(Question $question)
+    {
+        $question->delete();
+        return redirect('/');
+    }
 }
