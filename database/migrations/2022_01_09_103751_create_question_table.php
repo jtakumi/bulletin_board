@@ -15,8 +15,18 @@ class CreateQuestionTable extends Migration
     {
         Schema::create('question', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedBigInteger('users_id');
-            $table->foreign('users_id')->references('id')->on('users');
+            #外部キーの設定(user_id)
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            #occupation_id
+            $table->unsignedBigInteger('occupation_id');
+            $table->foreign('occupation_id')->references('id')->on('occupation')->onDelete('cascade');
+            #company_id
+            $table->unsignedBigInteger('company_id');
+            $table->foreign('company_id')->references('id')->on('company')->onDelete('cascade');
+            #industry_id
+            $table->unsignedBigInteger('industry_id');
+            $table->foreign('industry_id')->references('id')->on('industry')->onDelete('cascade');
             $table->text('questionText');
             $table->text('answer');
             $table->text('feedback')->nullable();
