@@ -22,13 +22,13 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');*/
 
-Route::get('/','QuestionController@index');
-Route::get('/question/create','QuestionController@create');
-Route::post('/question','QuestionController@store');
-Route::get('/question/{question}','QuestionController@show');
-Route::put('/question/{question}','QuestionController@update');
-Route::get('/question/{question}/edit','QuestionController@edit');
-Route::delete('/question/{question}','QuestionController@delete');
+Route::get('/','QuestionController@index2');
+Route::get('/question/create','QuestionController@create2');
+Route::post('/question','QuestionController@store2');
+Route::get('/question/{question}','QuestionController@show2');
+Route::put('/question/{question}','QuestionController@update2');
+Route::get('/question/{question}/edit','QuestionController@edit2');
+Route::delete('/question/{question}','QuestionController@delete2');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

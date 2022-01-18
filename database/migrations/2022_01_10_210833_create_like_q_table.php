@@ -15,8 +15,11 @@ class CreateLikeQTable extends Migration
     {
         Schema::create('like_q', function (Blueprint $table) {
               $table->increments('id');
-            $table->integer('users_id')->unsigned();
+            $table->unsignedBigInteger('users_id');
+            $table->foreign('users_id')->references('id')->on('users');
+            
             $table->integer('question_id')->unsigned();
+            $table->foreign('question_id')->references('id')->on('question');
             $table->timestamps();
         });
     }
