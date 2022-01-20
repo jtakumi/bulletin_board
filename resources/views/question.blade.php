@@ -23,7 +23,7 @@
                 <textarea name="post[body]" placeholder="質問に対する回答を入力してください">{{ old('post.body') }}</textarea>
                 <p class="body_error" style="color:red">{{ $errors->first('post.body') }}</p>
             </div>
-            <input type="submit" value="strore"/>
+            <input type="submit" value="store"/>
                 </form>
                  <div class='footer'>
             <a href="/">戻る</a></div>
