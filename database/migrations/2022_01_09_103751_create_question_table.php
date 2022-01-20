@@ -14,7 +14,7 @@ class CreateQuestionTable extends Migration
     public function up()
     {
         Schema::create('question', function (Blueprint $table) {
-            $table->increments('id');
+                 $table->increments('id');
             $table->text('questionText');
             $table->text('answer');
             $table->text('feedback')->nullable();
