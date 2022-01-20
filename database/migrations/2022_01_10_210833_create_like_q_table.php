@@ -22,6 +22,7 @@ class CreateLikeQTable extends Migration
             #外部キーの設定(question_id)
             $table->unsignedBigInteger('question_id');
             $table->foreign('question_id')->references('id')->on('question')->onDelete('cascade');
+            
             $table->timestamps();
         });
     }

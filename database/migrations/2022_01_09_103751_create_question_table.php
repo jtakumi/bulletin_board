@@ -14,7 +14,11 @@ class CreateQuestionTable extends Migration
     public function up()
     {
         Schema::create('question', function (Blueprint $table) {
-            $table->increments('id');
+              $table->increments('id');
+            $table->text('questionText');
+            $table->text('answer');
+            $table->text('feedback')->nullable();
+            $table->timestamps();
             #外部キーの設定(user_id)
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
@@ -27,10 +31,6 @@ class CreateQuestionTable extends Migration
             #industry_id
             $table->unsignedBigInteger('industry_id');
             $table->foreign('industry_id')->references('id')->on('industry')->onDelete('cascade');
-            $table->text('questionText');
-            $table->text('answer');
-            $table->text('feedback')->nullable();
-            $table->timestamps();
         });
     }
 
