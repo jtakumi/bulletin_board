@@ -10,6 +10,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
     </head>
     <body>
+        //javascript書く
         <h1>blog Name</h1>
         <form action="/posts" method="POST">
             @csrf
@@ -29,15 +30,15 @@
                 </div>
                 <div class="industry">
                     <h2>業界</h2>
-                    <input type="text" name="question[industry]" placeholder="その企業の業界" value="{{old('question.industry') }}"/>
+                    <select type="text" name="question[industry]" placeholder="その企業の業界" value="{{old('question.industry') }}"/>
                 </div>
                 <div class="occupation"/>
                 <h2>職種</h2>
-                    <input type="text" name="question[occupation]" placeholder="応募職種" value="{{old('question.occupation') }}"/>
+                    <select type="text" name="question[occupation]" placeholder="応募職種" value="{{old('question.occupation') }}"/>
                 </div>
                 <div class="company"/>
                 <h2>企業名</h2>
-                    <input type="text" name="question[company]" placeholder="応募企業名" value="{{old('question.company') }}"/>
+                    <select type="text" name="question[company]" placeholder="応募企業名" value="{{old('question.company') }}"/>
                 </div>
                 
             <input type="submit" value="strore"/>

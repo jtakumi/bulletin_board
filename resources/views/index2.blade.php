@@ -10,6 +10,11 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
     </head>
     <body>
+        <div>
+            @foreach($qujson)
+            <div>{{ $qujson['results'] }}</div>
+            @endforeach
+        </div>
         <h1>Blog name</h1>
         <p class='create'>[<a href='/posts/create'>create</a>]</p>
         <div class "posts">

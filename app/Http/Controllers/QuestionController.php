@@ -47,7 +47,16 @@ class QuestionController extends Controller
     }*/
     public function index2(Question $question)
     {
-    return view('index2')->with(['question' => $question->getPaginateByLimit()]);
+        $client = new \GuzzleHttp\Client();
+        
+        $url='https://job.yahooapis.jp/v1/furusato/company/?appid=dj00aiZpPTNQeTY1eVdmOTNMZiZzPWNvbnN1bWVyc2VjcmV0Jng9Yjg-';
+        $respose=$client->request(
+            'GET',
+            'url',);
+            $qujeson=json_decode($respose->getBody(),true);
+        
+    return view('index2')->with(['question' => $question->getPaginateByLimit(),
+            'qujeson' => $qujeson['qujeson']]);
     }
     
     public function show2(Question $question)
