@@ -15,7 +15,7 @@
             <div>{{ $qujson['results'] }}</div>
             @endforeach
         </div>
-        <h1>Blog name</h1>
+        <h1>質問投稿掲示板</h1>
         <p class='create'>[<a href='/posts/create'>create</a>]</p>
         <div class "posts">
             @foreach ($posts as $post)

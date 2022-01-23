@@ -52,7 +52,7 @@ class QuestionController extends Controller
         $url='https://job.yahooapis.jp/v1/furusato/company/?appid=dj00aiZpPTNQeTY1eVdmOTNMZiZzPWNvbnN1bWVyc2VjcmV0Jng9Yjg-';
         $respose=$client->request(
             'GET',
-            'url',);
+            $url,);
             $qujeson=json_decode($respose->getBody(),true);
         
     return view('index2')->with(['question' => $question->getPaginateByLimit(),
