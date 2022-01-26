@@ -11,25 +11,25 @@
     </head>
     <body>
         <div>
-            @foreach($qujson)
-            <div>{{ $qujson['results'] }}</div>
+            @foreach($results as $result)
+            <div>{{ $result['name'] }}</div>
             @endforeach
         </div>
         <h1>質問投稿掲示板</h1>
-        <p class='create'>[<a href='/posts/create'>create</a>]</p>
-        <div class "posts">
-            @foreach ($posts as $post)
-            <div class= 'post'>
+        <p class='create'>[<a href='/questions/create'>create</a>]</p>
+        <div class "questions">
+            @foreach ($questions as $question)
+            <div class= 'question'>
                 <h2 class= 'title' >
-                    <a href="/posts/{{$post->id}}">{{$post->title}}</a>
+                    <a href="/questions/{{$question->id}}">{{$question->title}}</a>
                 </h2>
-                <p class= 'body'>{{$post->body}}</p>
+                <p class= 'body'>{{$question->body}}</p>
             </div>
-            <form action="/posts/{{ $post->id }}" id="form_{{ $post->id}}">
+            <form action="/questions/{{ $question->id }}" id="form_{{ $question->id}}">
             @endforeach
         </div>
         <div class='paginate'>
-            {{ $posts->links() }}
+            {{ $questions->links() }}
         </div>
     </body>
 </html>

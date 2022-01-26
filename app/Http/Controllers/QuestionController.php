@@ -53,10 +53,10 @@ class QuestionController extends Controller
         $respose=$client->request(
             'GET',
             $url,);
-            $qujeson=json_decode($respose->getBody(),true);
+            $results=json_decode($respose->getBody(),true);
         
-    return view('index2')->with(['question' => $question->getPaginateByLimit(),
-            'qujeson' => $qujeson['qujeson']]);
+    return view('index2')->with(['questions' => $question->getPaginateByLimit(),
+            'results' => $results['results']]);
     }
     
     public function show2(Question $question)
@@ -73,7 +73,7 @@ class QuestionController extends Controller
     {
         $input = $request['question'];
         $question->fill($input)->save();
-        return redirect('/question/' . $question->id);
+        return redirect('/questions/' . $question->id);
     }
     
     public function edit2(Question $question)
@@ -85,7 +85,7 @@ class QuestionController extends Controller
     {
           $input = $request['question'];
         $question->fill($input)->save();
-        return redirect('/question/' . $question->id);
+        return redirect('/questions/' . $question->id);
     }
     public function delete(Question $question)
     {

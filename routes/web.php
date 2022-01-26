@@ -25,10 +25,10 @@ Route::get('/home', 'HomeController@index')->name('home');*/
 Route::get('/','QuestionController@index2');
 Route::get('/question/create','QuestionController@create2');
 Route::post('/question','QuestionController@store2');
-Route::get('/question/{question}','QuestionController@show2');
-Route::put('/question/{question}','QuestionController@update2');
-Route::get('/question/{question}/edit','QuestionController@edit2');
-Route::delete('/question/{question}','QuestionController@delete2');
+Route::get('/question/{questions}','QuestionController@show2');
+Route::put('/question/{questions}','QuestionController@update2');
+Route::get('/question/{questions}/edit','QuestionController@edit2');
+Route::delete('/question/{questions}','QuestionController@delete2');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
