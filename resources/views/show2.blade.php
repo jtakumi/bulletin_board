@@ -11,8 +11,8 @@
     </head>
     <body>
         <h1>質問</h1>
-        <p class="edit">[<a href="/question/{{ $post->id }}/edit">edit</a>]</p>
-         <form action="/question/{{ $question->id }}" id="form_delete" method="post">
+        <p class="edit">[<a href="/questions/{{ $question->id }}/edit">edit</a>]</p>
+         <form action="/questions/{{ $question->id }}" id="form_delete" method="post">
                 @csrf
                 @method('DELETE')
                 <p class="delete">[<span onclick="return deletePost(this);">delete</span>]</p>
