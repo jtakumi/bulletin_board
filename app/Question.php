@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Question extends Model
 {
     protected $fillable =[
-        'industry',
-        'occupation',
-        'company',
         'title',
         'body',
         'feedback',
+        'industry',
+        'occupation',
+        'company',
         ];
     public function getPaginateByLimit(int $limit_count = 50)
     {

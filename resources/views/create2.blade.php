@@ -10,8 +10,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
     </head>
     <body>
-        //javascript書く
         <h1>質問投稿掲示板</h1>
+        <input type="submit" value="検索" class="btn btn-info">
+        </form>
         <form action="/questions" method="POST">
             @csrf
             <div class="title">
@@ -25,27 +26,40 @@
                 <p class="body_error" style="color:red">{{ $errors->first('question.body') }}</p>
             <div class="feedback">
                 <h2>面接官の反応</h2>
-                <input type="textarea" name="question[feedback]" placeholder="面接官の反応"/>{{old('question.feedback') }}</textarea>
+                <textarea name="question[feedback]" placeholder="面接官の反応"/>{{old('question.feedback') }}</textarea>
+                <p class="feedback_error" style="color:red">{{ $errors->first('question.feedback') }}</p>
                 </div>
             <div class="industry">
                     <h2>業界</h2>
-                    <select type="text" name="question[industry]" placeholder="その企業の業界" value="{{old('question.industry') }}"/>
+                    <input type="text" name="question[industry]" placeholder="その企業の業界" value="{{old('question.industry') }}"/>
+                    <p class="industry_error" style="color:red">{{ $errors->first('question.industry') }}</p>
                 </div>
             <div class="occupation"/>
                 <h2>職種</h2>
-                    <select type="text" name="question[occupation]" placeholder="応募職種" value="{{old('question.occupation') }}"/>
+                    <input type="text" name="question[occupation]" placeholder="応募職種" value="{{old('question.occupation') }}"/>
+                    <p class="occupation_error" style="color:red">{{ $errors->first('question.occupation') }}</p>
                 </div>
             <div class="company"/>
                 <h2>企業名</h2>
-                    <select type="text" name="question[company]" placeholder="応募企業名" value="{{old('question.company') }}"/>
+                    <input type="text" name="question[company]" placeholder="応募企業名" value="{{old('question.company') }}"/>
+                    <p class="company_error" style="color:red">{{ $errors->first('question.compa') }}</p>
                 </div>
             
             </div>
             
-                
-            <input type="submit" value="strore"/>
+            <input type="submit" value="投稿"/>
                 </form>
                  <div class='footer'>
             <a href="/">戻る</a></div>
+             <script>
+            function deletePost(e)
+            {
+                'use strict';
+                if(confirm("完全に削除します。よろしいでしょうか？"))
+                {
+                    document.getElementById('form_delete').submit();
+                }
+            }
+            </script>
     </body>
 </html>

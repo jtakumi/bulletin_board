@@ -11,13 +11,13 @@
     </head>
     <body>
         <h1>質問</h1>
-        <p class="edit">[<a href="/questions/{{ $question->id }}/edit">edit</a>]</p>
+        <p class="edit">[<a href="/questions/{{ $question->id }}/edit2">編集</a>]</p>
          <form action="/questions/{{ $question->id }}" id="form_delete" method="post">
                 @csrf
                 @method('DELETE')
-                <p class="delete">[<span onclick="return deletePost(this);">delete</span>]</p>
+                <p class="delete">[<span onclick="return deletePost(this);">削除</span>]</p>
                 </form>
-        <div class='post'>
+        <div class='questions'>
             <h2 class='title'>{{ $question->title }}</h2>
             <p class='boby'>{{ $question->body }}</p>
             <p class='feedback'>{{ $question->feedback }}</p>

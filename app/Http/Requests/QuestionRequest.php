@@ -21,8 +21,8 @@ class QuestionRequest extends FormRequest
     {
         return [
             'question.industry' => 'required|string|max:100',
-            'question.occupation' => 'required',
-            'question.company' => 'required',
+            'question.occupation' => 'required|string|max:100',
+            'question.company' => 'required|string|max:100',
             'question.title' => 'required|string|max:100',
             'question.body' => 'required|string|max:20000',
             'question.feedback' => 'max:20000',

@@ -16,6 +16,9 @@ class CreateOccupationTable extends Migration
         Schema::create('occupation', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            #外部キーの設定(Industry_id)
+            $table->unsignedBigInteger('industry_id');
+            $table->foreign('industry_id')->references('id')->on('industry')->onDelete('cascade');
             $table->timestamps();
         });
     }

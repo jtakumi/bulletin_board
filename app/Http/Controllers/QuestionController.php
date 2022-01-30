@@ -61,7 +61,7 @@ class QuestionController extends Controller
     
     public function show2(Question $question)
     {
-    return view('show2')->with(['question' => $question]);
+    return view('show2')->with(['questions' => $question]);
     }
 
     public function create2()

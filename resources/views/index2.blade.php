@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>blog</title>
+        <title>質問投稿掲示板</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
@@ -12,11 +12,11 @@
     <body>
         <div>
             @foreach($results as $result)
-            <div>{{ $result['name'] }}</div>
+            <div>{{ $result }}</div>
             @endforeach
         </div>
         <h1>質問投稿掲示板</h1>
-        <p class='create'>[<a href='/questions/create'>create</a>]</p>
+        <p class='create2'>[<a href='/questions/create2'>投稿</a>]</p>
         <div class "questions">
             @foreach ($questions as $question)
             <div class= 'question'>
