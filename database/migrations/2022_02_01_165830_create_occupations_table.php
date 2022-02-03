@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOccupationTable extends Migration
+class CreateOccupationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateOccupationTable extends Migration
      */
     public function up()
     {
-        Schema::create('occupation', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('occupations', function (Blueprint $table) {
+            $table->BigIncrements('id');
             $table->string('name');
             #外部キーの設定(Industry_id)
             $table->unsignedBigInteger('industry_id');
-            $table->foreign('industry_id')->references('id')->on('industry')->onDelete('cascade');
+            $table->foreign('industry_id')->references('id')->on('industries')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateOccupationTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('occupation');
+        Schema::dropIfExists('occupations');
     }
 }

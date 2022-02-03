@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\QuestionRequest;
 use App\Question;
+use App\Category;
 
 class QuestionController extends Controller
 {
@@ -64,9 +65,9 @@ class QuestionController extends Controller
     return view('show2')->with(['questions' => $question]);
     }
 
-    public function create2()
+    public function create2(Category $category)
     {
-        return view('create2');
+        return view('questions/create2')->with(['categories' => $category->get()]);
     }
     
     public function store2(Question $question,QuestionRequest $request )

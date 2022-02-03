@@ -26,6 +26,7 @@
                 <p class= 'body'>{{$question->body}}</p>
             </div>
             <form action="/questions/{{ $question->id }}" id="form_{{ $question->id}}">
+            <a href="">{{ $post->category->name }}</a>
             @endforeach
         </div>
         <div class='paginate'>

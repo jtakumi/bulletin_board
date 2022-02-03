@@ -44,6 +44,14 @@
                     <input type="text" name="question[company]" placeholder="応募企業名" value="{{old('question.company') }}"/>
                     <p class="company_error" style="color:red">{{ $errors->first('question.compa') }}</p>
                 </div>
+            <div class="category">
+                <h2>Category</h2>
+                <select name="question[category_id]">
+                    @foreach($categories as $category)
+                     <option value="{{ $category->id  }}">{{ $category->name }}</option>
+                    @endforeach
+                </select>
+            </div>
             
             </div>
             

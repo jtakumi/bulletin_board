@@ -14,15 +14,14 @@ class CreateLikeQTable extends Migration
     public function up()
     {
         Schema::create('like_q', function (Blueprint $table) {
-              $table->increments('id');
-               #外部キーの設定(user_id)
+            $table->BigIncrements('id');
+               #外部キーの設定(users_id)
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             #question_id
-            #外部キーの設定(question_id)
+            #外部キーの設定(questions_id)
             $table->unsignedBigInteger('question_id');
-            $table->foreign('question_id')->references('id')->on('question')->onDelete('cascade');
-            
+            $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
             $table->timestamps();
         });
     }
