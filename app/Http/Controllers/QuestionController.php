@@ -67,24 +67,24 @@ class QuestionController extends Controller
 
     public function create2(Category $category)
     {
-        return view('questions/create2')->with(['categories' => $category->get()]);
+        return view('create2')->with(['categories' => $category->get()]);
     }
     
     public function store2(Question $question,QuestionRequest $request )
     {
-        $input = $request['question'];
+        $input = $request['questions'];
         $question->fill($input)->save();
         return redirect('/questions/' . $question->id);
     }
     
     public function edit2(Question $question)
     {
-        return view('edit2')->with(['question' => $question]);
+        return view('edit2')->with(['questions' => $question]);
     }
     
     public function update(Question $question,QuestionRequest $request)
     {
-          $input = $request['question'];
+          $input = $request['questions'];
         $question->fill($input)->save();
         return redirect('/questions/' . $question->id);
     }

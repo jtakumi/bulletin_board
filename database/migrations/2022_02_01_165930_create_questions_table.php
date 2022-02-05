@@ -22,15 +22,10 @@ class CreateQuestionsTable extends Migration
             #外部キーの設定(user_id)
            $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            #occupation_id
-            $table->unsignedBigInteger('occupation_id');
-            $table->foreign('occupation_id')->references('id')->on('occupations')->onDelete('cascade');
             #company_id
             $table->unsignedBigInteger('company_id');
             $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
-            #industry_id
-            $table->unsignedBigInteger('industry_id');
-            $table->foreign('industry_id')->references('id')->on('industries')->onDelete('cascade');
+            
         });
     }
 

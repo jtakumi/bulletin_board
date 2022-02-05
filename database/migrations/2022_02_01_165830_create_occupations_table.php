@@ -19,6 +19,7 @@ class CreateOccupationsTable extends Migration
             #外部キーの設定(Industry_id)
             $table->unsignedBigInteger('industry_id');
             $table->foreign('industry_id')->references('id')->on('industries')->onDelete('cascade');
+            
             $table->timestamps();
         });
     }

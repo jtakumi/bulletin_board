@@ -11,8 +11,6 @@
     </head>
     <body>
         <h1>質問投稿掲示板</h1>
-        <input type="submit" value="検索" class="btn btn-info">
-        </form>
         <form action="/questions" method="POST">
             @csrf
             <div class="title">
@@ -31,18 +29,21 @@
                 </div>
             <div class="industry">
                     <h2>業界</h2>
-                    <input type="text" name="question[industry]" placeholder="その企業の業界" value="{{old('question.industry') }}"/>
-                    <p class="industry_error" style="color:red">{{ $errors->first('question.industry') }}</p>
+                    <select type="text" name="question[industry]" />
+                    <!--placeholder="その企業の業界" value="{{old('question.industry') }}"
+                    <p class="industry_error" style="color:red">{{ $errors->first('question.industry') }}</p> -->
                 </div>
             <div class="occupation"/>
                 <h2>職種</h2>
-                    <input type="text" name="question[occupation]" placeholder="応募職種" value="{{old('question.occupation') }}"/>
-                    <p class="occupation_error" style="color:red">{{ $errors->first('question.occupation') }}</p>
+                    <select type="text" name="question[occupation]"/>
+                    <!--placeholder="応募職種" value="{{old('question.occupation') }}"/>
+                    <p class="occupation_error" style="color:red">{{ $errors->first('question.occupation') }}</p>-->
                 </div>
             <div class="company"/>
                 <h2>企業名</h2>
-                    <input type="text" name="question[company]" placeholder="応募企業名" value="{{old('question.company') }}"/>
-                    <p class="company_error" style="color:red">{{ $errors->first('question.compa') }}</p>
+                    <input type="text" name="question[company]"/>
+                    <!--placeholder="応募企業名" value="{{old('question.company') }}"/>
+                    <p class="company_error" style="color:red">{{ $errors->first('question.compa') }}</p>-->
                 </div>
             <div class="category">
                 <h2>Category</h2>

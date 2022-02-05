@@ -20,12 +20,12 @@ class QuestionRequest extends FormRequest
     public function rules()
     {
         return [
-            'question.industry' => 'required|string|max:100',
-            'question.occupation' => 'required|string|max:100',
-            'question.company' => 'required|string|max:100',
-            'question.title' => 'required|string|max:100',
-            'question.body' => 'required|string|max:20000',
-            'question.feedback' => 'max:20000',
+            'questions.industry' => 'required',
+            'questions.occupation' => 'required',
+            'questions.company' => 'required|string|max:100',
+            'questions.title' => 'required|string|max:100',
+            'questions.body' => 'required|string|max:20000',
+            'questions.feedback' => 'string|max:20000',
         ];
     }
 }
