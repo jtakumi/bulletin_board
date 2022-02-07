@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\QuestionRequest;
 use App\Question;
 use App\Category;
+use App\Industry;
+use App\Occupation;
 
 class QuestionController extends Controller
 {
@@ -65,9 +67,10 @@ class QuestionController extends Controller
     return view('show2')->with(['questions' => $question]);
     }
 
-    public function create2(Category $category)
+    public function create2(Industry $industry,Occupation $occupation)
     {
-        return view('create2')->with(['categories' => $category->get()]);
+        return view('create2')->with(['Industries' => $industry->get()],
+        ['occupations'=> $occupation->get()]);
     }
     
     public function store2(Question $question,QuestionRequest $request )

@@ -3,8 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Company;
 
 class Occupation extends Model
 {
-    protected $fillable=["name"];
+    public function companies()
+    {
+        return $this->hasOne('App\company');    
+    }
 }

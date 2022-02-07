@@ -19,10 +19,13 @@ class CompanyTableSeeder extends Seeder
             'GET',
             $url,);
             $results=json_decode($respose->getBody(),true);
-        foreach($results['results'] as $result){ 
-            Company::create([
-                'name'=> $result['name']
-                ]);
+        foreach($results['results'] as $result)
+        { 
+                Company::create([
+                'name'=> $result['name'],
+                'address'=>$result['prefecture']]);    
+            
+            
         }
     }
 }

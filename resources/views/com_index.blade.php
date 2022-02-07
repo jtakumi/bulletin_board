@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>質問投稿掲示板</title>
+        <title>質問投稿掲示板_登録企業一覧</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
@@ -13,16 +13,12 @@
     <body>
      <link rel="stylesheet" href={{ asset('/public/css/index.css') }}/>
         
-        <div>
-            @foreach($results as $result)
-            <div>{{ $result['name'] }}</div>
-            @endforeach
-        </div>
-        <h1>質問投稿掲示板</h1>
-        <p class='create2'>[<a href='/questions/create2'>投稿</a>]</p>
-        <p class=com_show>[<a href='/companies'>登録企業一覧</a></p>
+        
+        <h1>質問投稿掲示板_登録企業一覧</h1>
+        <p class='create2'>[<a href='/questions/create2'>質問投稿</a>]</p>
         <p class=com_create>[<a href='/companies/com_create/'>企業登録</a></p>
-        <div class "questions">
+        <a href="/">戻る</a></div>
+        <div class "companies">
             @foreach ($questions as $question)
             <div class= 'question'>
                 <h2 class= 'title' >

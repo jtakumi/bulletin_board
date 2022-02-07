@@ -27,32 +27,12 @@
                 <textarea name="question[feedback]" placeholder="面接官の反応"/>{{old('question.feedback') }}</textarea>
                 <p class="feedback_error" style="color:red">{{ $errors->first('question.feedback') }}</p>
                 </div>
-            <div class="industry">
-                    <h2>業界</h2>
-                    <select type="text" name="question[industry]" />
-                    <!--placeholder="その企業の業界" value="{{old('question.industry') }}"
-                    <p class="industry_error" style="color:red">{{ $errors->first('question.industry') }}</p> -->
-                </div>
-            <div class="occupation"/>
-                <h2>職種</h2>
-                    <select type="text" name="question[occupation]"/>
-                    <!--placeholder="応募職種" value="{{old('question.occupation') }}"/>
-                    <p class="occupation_error" style="color:red">{{ $errors->first('question.occupation') }}</p>-->
-                </div>
-            <div class="company"/>
+            <div class="company_id"/>
                 <h2>企業名</h2>
-                    <input type="text" name="question[company]"/>
-                    <!--placeholder="応募企業名" value="{{old('question.company') }}"/>
-                    <p class="company_error" style="color:red">{{ $errors->first('question.compa') }}</p>-->
+                    <input type="text" name="question[company_id]"
+                    placeholder="応募企業名" value="{{old('question.company') }}"/>
+                    <p class="company_error" style="color:red">{{ $errors->first('question.compa') }}</p>
                 </div>
-            <div class="category">
-                <h2>Category</h2>
-                <select name="question[category_id]">
-                    @foreach($categories as $category)
-                     <option value="{{ $category->id  }}">{{ $category->name }}</option>
-                    @endforeach
-                </select>
-            </div>
             
             </div>
             

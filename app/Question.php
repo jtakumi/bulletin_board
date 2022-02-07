@@ -10,10 +10,7 @@ class Question extends Model
         'title',
         'body',
         'feedback',
-        'industry',
-        'occupation',
-        'company',
-        'category_id',
+        'company_id',
         ];
     public function getPaginateByLimit(int $limit_count = 50)
     {
@@ -21,8 +18,8 @@ class Question extends Model
         return $this::with('category')->orderBy('updated_at','DESC')->paginate($limit_count);
     }
     
-    public function category()
+    public function company()
     {
-        return $this->belongsTo('App\Category');
+        return $this->belongsTo('App\Company');
     }
 }

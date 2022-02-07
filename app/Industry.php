@@ -3,8 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Company;
 
 class Industry extends Model
 {
-    protected  $fillable=["name"];
+    public function Companies()
+    {
+        return $this->hasOne('App\Company');
+    }
+    
 }
