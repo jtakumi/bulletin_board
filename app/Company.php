@@ -13,6 +13,11 @@ class Company extends Model
                         'industry_id',
                         'occupation_id'];
                         
+     public function getPaginateByLimit(int $limit_count = 50)
+    {
+        return $this->orderBy('updated_at','DESC')->paginate($limit_count);
+        //return $this::with('category')->orderBy('updated_at','DESC')->paginate($limit_count);
+    }
     public function Industry()
     {
         return $this->belongTo('App\Industry');
@@ -20,5 +25,9 @@ class Company extends Model
     public function Occupation()
     {
         return $this->belongTo('App\Occupation');
+    }
+    public function Question()
+    {
+        return $this->hasMany('App\Question');
     }
 }

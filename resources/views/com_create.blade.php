@@ -43,6 +43,7 @@
             </div>
             <input type="submit" value="企業情報投稿"/>
                 </form>
+                <a href='/companies/com_index'>登録企業一覧</a>
                  <div class='footer'>
             <a href="/">戻る</a></div>
              <script>

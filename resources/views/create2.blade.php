@@ -29,13 +29,11 @@
                 </div>
             <div class="company_id"/>
                 <h2>企業名</h2>
-                    <input type="text" name="question[company_id]"
-                    placeholder="応募企業名" value="{{old('question.company') }}"/>
-                    <p class="company_error" style="color:red">{{ $errors->first('question.compa') }}</p>
+                    <input type="tel" name="question[company_id]"
+                    placeholder="応募企業id" value="{{old('question.company_id') }}"/>
+                    <p class="company_error" style="color:red">{{ $errors->first('question.company_id') }}</p>
                 </div>
-            
             </div>
-            
             <input type="submit" value="投稿"/>
                 </form>
                  <div class='footer'>

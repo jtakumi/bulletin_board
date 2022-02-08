@@ -23,7 +23,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');*/
 
 Route::get('/','QuestionController@index2');
-Route::get('/companies','CompanyController@com_index');
+Route::get('/companies/com_index','CompanyController@com_index');
 Route::get('/companies/com_create','CompanyController@com_create');
 Route::get('/questions/create2','QuestionController@create2');
 Route::post('/questions','QuestionController@store2');

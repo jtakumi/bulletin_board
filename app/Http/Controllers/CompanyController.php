@@ -11,13 +11,13 @@ class CompanyController extends Controller
 {
     public function com_index(Company $company)
     {
-        return view('com_index')->with(['companies' => $company->getPaginate()]);    
+        return view('com_index')->with(['companies' => $company->getPaginateByLimit()]);    
     }
 
     public function com_show(Industry $industry,Occupation $occupation)
     {
-        return view('com_show')->with(['industries' => $industry->get()],
-        ['occupations' => $occupation->get()]);;
+        return view('com_show')->with(['industries' => $industry->get(),
+        'occupations' => $occupation->get()]);
     }
 
     public function com_create(Industry $industry, Occupation $occupation)
@@ -31,6 +31,22 @@ class CompanyController extends Controller
         $input = $request['company'];
         $company->fill($input)->save();
         return redirect('/companies/' . $company->id);
+    }
+    public function com_edit(Company $Company)
+    {
+        return view('com_edit')->with(['companies' => $company]);
+    }
+    
+    public function com_update(Company $company,CompanyRequest $request)
+    {
+          $input = $request['companies'];
+        $company->fill($input)->save();
+        return redirect('/companies/' . $company->id);
+    }
+    public function delete(Company $company)
+    {
+        $company->delete();
+        return redirect('/');
     }
 }
 

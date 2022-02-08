@@ -19,19 +19,18 @@
         <p class=com_create>[<a href='/companies/com_create/'>企業登録</a></p>
         <a href="/">戻る</a></div>
         <div class "companies">
-            @foreach ($questions as $question)
-            <div class= 'question'>
-                <h2 class= 'title' >
-                    <a href="/questions/{{$question->id}}">{{$question->title}}</a>
-                </h2>
-                <p class= 'body'>{{$question->body}}</p>
+            @foreach ($companies as $company)
+            <div class= 'company'>
+                <p class='id'>{{ $company->id }}</p>
+                <h2><p class= 'name' >{{$company->name}}</p></h2>
+                <p class= 'address'>{{$company->address}}</p>
+                <p class='industry_id'>{{ $company->industry_id}}</p>
+                <p class='occupation_id'>{{ $company->occupation_id}}</p>
             </div>
-            <form action="/questions/{{ $question->id }}" id="form_{{ $question->id}}">
-            <a href="">{{ $post->category->name }}</a>
             @endforeach
         </div>
         <div class='paginate'>
-            {{ $questions->links() }}
+            {{ $companies->links() }}
         </div>
     </body>
 </html>

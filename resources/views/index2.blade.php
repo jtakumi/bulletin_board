@@ -12,15 +12,9 @@
     <!--表示領域-->
     <body>
      <link rel="stylesheet" href={{ asset('/public/css/index.css') }}/>
-        
-        <div>
-            @foreach($results as $result)
-            <div>{{ $result['name'] }}</div>
-            @endforeach
-        </div>
         <h1>質問投稿掲示板</h1>
         <p class='create2'>[<a href='/questions/create2'>投稿</a>]</p>
-        <p class=com_show>[<a href='/companies'>登録企業一覧</a></p>
+        <p class=com_index>[<a href='/companies/com_index'>登録企業一覧</a></p>
         <p class=com_create>[<a href='/companies/com_create/'>企業登録</a></p>
         <div class "questions">
             @foreach ($questions as $question)
