@@ -13,8 +13,7 @@
         <h1>面接質問掲示板_質問閲覧</h1>
         <p class="login">[<a heaf="/login">ログイン</a>]</p>
         <p class="edit">[<a href="/questions/{{ $question->id }}/edit">編集</a>]</p>
-         <form action="/questions/{{ $question->id }}" id="for
-         m_delete" method="post">
+         <form action="/questions/{{ $question->id }}" id="form_delete" method="post">
                 @csrf
                 @method('DELETE')
                 <p class="delete">[<span onclick="return deletePost(this);">削除</span>]</p>
@@ -31,7 +30,7 @@
         <p class='com_index'>[<a href='/companies/com_index'>登録企業一覧</a>]</p>
         <p class=com_create>[<a href='/companies/com_create/'>企業登録</a>]</p>
         <div class='footer'>
-            [<a href="/">戻る</a>]
+            [<a href="/">トップページへ</a>]
             <script>
             function deletePost(e)
             {

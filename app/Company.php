@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Industry;
 use App\Occupation;
+use App\Question;
 
 class Company extends Model
 {
@@ -13,7 +14,7 @@ class Company extends Model
                         'industry_id',
                         'occupation_id'];
                         
-     public function getPaginateByLimit(int $limit_count = 50)
+     public function getPaginateByLimit(int $limit_count = 20)
     {
         return $this->orderBy('updated_at','DESC')->paginate($limit_count);
         //return $this::with('category')->orderBy('updated_at','DESC')->paginate($limit_count);

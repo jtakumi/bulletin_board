@@ -35,17 +35,19 @@
                     <p class="user_id_error" style="color:red">{{ $errors->first('question.user_id') }}</p>
                 </div>
             <div class="company_id"/>
-                <h2>企業ID</h2>
-                    <input type="tel" name="question[company_id]"
-                    placeholder="応募企業id" value="{{old('question.company_id') }}"/>
-                    <p class="company_id_error" style="color:red">{{ $errors->first('question.company_id') }}</p>
+                <h2>企業</h2>
+                    <select name="question[company_id]">
+                    @foreach($companies as $company)
+                    <option value="{{ old('question.company_id',$company->id) }} ">{{ $company->name }}</option>
+                    @endforeach
+                    </select>
                 </div>
             </div>
             <input type="submit" value="投稿"/>
                 </form>
                 <p class='com_index'>[<a href='/companies/com_index'>登録企業一覧</a>]</p>
                 <p class=com_create>[<a href='/companies/com_create/'>企業登録</a>]</p>
-                 <p class='index2'>[<a href="/">戻る</a>]</p>
+                 <p class='index2'>[<a href="/">トップページへ</a>]</p>
              <script>
             function deletePost(e)
             {

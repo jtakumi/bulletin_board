@@ -10,11 +10,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1>面接質問掲示板_企業閲覧画面</h1>
+        <h1>面接質問掲示板_企業詳細閲覧画面</h1>
         <p class="login">[<a heaf="/login">ログイン</a>]</p>
         <p class="edit">[<a href="/campanies/{{ $companies->id }}/edit">企業編集</a>]</p>
-         <form action="/companies/{{ $companies->id }}" id="for
-         m_delete" method="post">
+         <form action="/companies/{{ $companies->id }}" id="form_delete" method="post">
                 @csrf
                 @method('DELETE')
                 <p class="delete">[<span onclick="return deletePost(this);">削除</span>]</p>

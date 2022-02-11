@@ -42,7 +42,7 @@
             <p class='com_index'>[<a href='/companies/com_index'>登録企業一覧</a>]</p>
                 <p class=com_create>[<a href='/companies/com_create/'>企業登録</a>]</p>
           <div class='footer'>
-        <a href="/">戻る</a>
+        <a href="/">トップページへ</a>
+        </div>
         </body>
-    </div>
 </html>
