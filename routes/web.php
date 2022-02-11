@@ -22,18 +22,18 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');*/
 
-Route::get('/','QuestionController@index2');
-Route::get('/companies/com_index','CompanyController@com_index');
-Route::get('/companies/com_create','CompanyController@com_create');
-Route::get('/questions/create2','QuestionController@create2');
-Route::post('/questions','QuestionController@store2');
-Route::post('/companies','CompanyController@com_store');
-Route::get('/questions/{questions}','QuestionController@show2');
-Route::get('/companies/{companies}','CompanyController@com_show');
-Route::put('/questions/{questions}','QuestionController@update2');
-Route::put('/companies/{companies}','CompanyController@com_update');
-Route::get('/questions/{questions}/edit2','QuestionController@edit2');
-Route::get('/companies/{companies}/com_edit','CompanyController@com_edit');
+Route::get('/','QuestionController@index');
+Route::get('/companies/com_index','CompanyController@index');
+Route::get('/companies/com_create','CompanyController@create');
+Route::get('/questions/create','QuestionController@create');
+Route::post('/questions/','QuestionController@store');
+Route::post('/companies/','CompanyController@store');
+Route::get('/questions/{questions}','QuestionController@show');
+Route::get('/companies/{companies}','CompanyController@show');
+Route::put('/questions/{questions}','QuestionController@update');
+Route::put('/companies/{companies}','CompanyController@update');
+Route::get('/questions/{questions}/edit','QuestionController@edit');
+Route::get('/companies/{companies}/com_edit','CompanyController@edit');
 Route::delete('/questions/{questions}','QuestionController@delete');
 Route::delete('/companies/{companies}','CompanyController@delete');
 Auth::routes();

@@ -4,27 +4,32 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>blog</title>
+        <title>面接質問投稿掲示板</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
     </head>
+    <!--表示領域-->
     <body>
-        <h1>Blog name</h1>
-        <p class='create'>[<a href='/posts/create'>create</a>]</p>
-        <div class "posts">
-            @foreach ($posts as $post)
-            <div class= 'post'>
-                <h2 class= 'title' >
-                    <a href="/posts/{{$post->id}}">{{$post->title}}</a>
+     <link rel="stylesheet" href={{ asset('/public/css/index.css') }}/>
+        <h1>面接質問投稿掲示板_トップページ</h1>
+        <p class="login">[<a heaf="/login">ログイン</a>]</p>
+        <p class='create'>[<a href='/questions/create'>質問投稿</a>]</p>
+        <p class=com_index>[<a href='/companies/com_index'>登録企業一覧</a>]</p>
+        <p class=com_create>[<a href='/companies/com_create/'>企業登録</a>]</p>
+        <div class "questions">
+            @foreach ($questions as $question)
+            <div class= 'question'>
+                <h2 class= 'questionText' >
+                    <a href="/questions/{{$question->id}}">{{$question->questionText}}</a>
                 </h2>
-                <p class= 'body'>{{$post->body}}</p>
+                <p class= 'answer'>{{$question->answer}}</p>
             </div>
-            <form action="/posts/{{ $post->id }}" id="form_{{ $post->id}}">
+            <form action="/questions/{{ $question->id }}" id="form_{{ $question->id}}">
             @endforeach
         </div>
         <div class='paginate'>
-            {{ $posts->links() }}
+            {{ $questions->links() }}
         </div>
     </body>
 </html>

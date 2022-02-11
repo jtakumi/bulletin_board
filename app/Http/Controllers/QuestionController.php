@@ -48,7 +48,7 @@ class QuestionController extends Controller
         $question->delete();
         return redirect('/');
     }*/
-    public function index2(Question $question)
+    public function index(Question $question)
     {
        /* $client = new \GuzzleHttp\Client();
         
@@ -58,30 +58,30 @@ class QuestionController extends Controller
             $url,);
             $results=json_decode($respose->getBody(),true);*/
         
-    return view('index2')->with(['questions' => $question->getPaginateByLimit()]);
+    return view('index')->with(['questions' => $question->getPaginateByLimit()]);
     }
     
-    public function show2(Question $question)
+    public function show(Question $question)
     {
-    return view('show2')->with(['questions' => $question]);
+    return view('show')->with(['questions' => $question]);
     }
 
-    public function create2(Industry $industry,Occupation $occupation)
+    public function create(Industry $industry,Occupation $occupation)
     {
-        return view('create2')->with(['Industries' => $industry->get()],
+        return view('create')->with(['Industries' => $industry->get()],
         ['occupations'=> $occupation->get()]);
     }
     
-    public function store2(Question $question,QuestionRequest $request )
+    public function store(Question $question,QuestionRequest $request )
     {
         $input = $request['questions'];
         $question->fill($input)->save();
         return redirect('/questions/' . $question->id);
     }
     
-    public function edit2(Question $question)
+    public function edit(Question $question)
     {
-        return view('edit2')->with(['questions' => $question]);
+        return view('edit')->with(['questions' => $question]);
     }
     
     public function update(Question $question,QuestionRequest $request)

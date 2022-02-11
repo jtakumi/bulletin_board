@@ -9,10 +9,10 @@ class CompanyRequest extends FormRequest
     public function rules()
     {
         return [
-            'Company.name' => 'required|string|max:100',
-            'Company.address' => 'required|string|max:200',
-            'Company.industry_id' => 'required',
-            'Company.occupation_id' => 'required',
+            'company.name' => 'required|string|max:100',
+            'company.address' => 'required|string|max:200',
+            'company.industry_id' => 'required',
+            'company.occupation_id' => 'required',
         ];
     }
 }

@@ -16,21 +16,17 @@
         
         <h1>質問投稿掲示板_登録企業一覧</h1>
         <p class='create2'>[<a href='/questions/create2'>質問投稿</a>]</p>
-        <p class=com_create>[<a href='/companies/com_create/'>企業登録</a></p>
-        <a href="/">戻る</a></div>
+        <p class=com_create>[<a href='/companies/com_create/'>企業登録</a>]</p>
+        <p class='index2'>[ <a href="/">戻る</a>]</p>
         <div class "companies">
             @foreach ($companies as $company)
             <div class= 'company'>
-                <p class='id'>{{ $company->id }}</p>
-                <h2><p class= 'name' >{{$company->name}}</p></h2>
+                <h2 class= 'name'><a herf="/companies/{{ $company->id }}" >{{$company->name}}</a></h2>
                 <p class= 'address'>{{$company->address}}</p>
                 <p class='industry_id'>{{ $company->industry_id}}</p>
                 <p class='occupation_id'>{{ $company->occupation_id}}</p>
             </div>
             @endforeach
-        </div>
-        <div class='paginate'>
-            {{ $companies->links() }}
         </div>
     </body>
 </html>
