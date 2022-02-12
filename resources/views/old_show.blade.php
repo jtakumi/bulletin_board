@@ -4,27 +4,23 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>面接質問掲示板</title>
+        <title>blog</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1>質問</h1>
-        <p class="edit">[<a href="/questions/{{ $question->id }}/edit2">編集</a>]</p>
-         <form action="/questions/{{ $question->id }}" id="form_delete" method="post">
+        <h1>title</h1>
+        <p class="edit">[<a href="/posts/{{ $post->id }}/edit">edit</a>]</p>
+         <form action="/posts/{{ $post->id }}" id="form_delete" method="post">
                 @csrf
                 @method('DELETE')
-                <p class="delete">[<span onclick="return deletePost(this);">削除</span>]</p>
+                <p class="delete">[<span onclick="return deletePost(this);">delete</span>]</p>
                 </form>
-        <div class='questions'>
-            <h2 class='title'>{{ $question->title }}</h2>
-            <p class='boby'>{{ $question->body }}</p>
-            <p class='feedback'>{{ $question->feedback }}</p>
-            <p class='industry'>{{ $question->industry }}</p>
-            <p class='occupation'>{{ $question->occupation }}</p>
-            <p class='company'>{{ $question->company }}</p>
-                <p class='update_at'>{{ $question->update_at}}</p>
+        <div class='post'>
+            <h2 class='title'>{{ $post->title }}</h2>
+            <p class='boby'>{{ $post->body }}</p>
+                <p class='update_at'>{{ $post->update_at}}</p>
             </div>
         <div class='footer'>
             <a href="/">戻る</a>

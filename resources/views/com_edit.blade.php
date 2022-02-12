@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     @extends('layouts.app')
-    
+    @section('content')
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>面接質問投稿掲示板_企業登録</title>
+        <title>面接質問投稿掲示板</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+        
     </head>
     <body>
-        <h1>面接質問投稿掲示板_企業登録</h1>
+        <h1>面接質問投稿掲示板_企業編集画面</h1>
         <p class="login">[<a heaf="/login">ログイン</a>]</p>
-        <form action="/companies/" method="POST">
+        <form action="/companies/{{$company->id}}" method="POST">
             @csrf
-            <div class="name">
+            @method('PUT')
+             <form action="/companies/{{ $company->id }}" id="form_delete" method="post">
+                @csrf
+                @method('DELETE')
+                <p class="delete">[<span onclick="return deletePost(this);">削除</span>]</p>
+                </form>
+               <div class="name">
                 <h2>企業名</h2>
                     <input type="text" name="company[name]" placeholder="応募企業名" value="{{old('company.name') }}"/>
                     <p class="name_error" style="color:red">{{ $errors->first('company.name') }}</p>
@@ -59,5 +66,7 @@
                 }
             }
             </script>
-    </body>
+        </body>
+        @endsection
+    </div>
 </html>

@@ -20,13 +20,13 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->string('belongs');
+           /* $table->string('belongs');
            $table->unsignedBigInteger('industry_id');
             $table->foreign('industry_id')->references('id')->on('industries');
             $table->unsignedBigInteger('occupation_id');
             $table->foreign('occupation_id')->references('id')->on('occupations');
             $table->unsignedBigInteger('company_id');
-            $table->foreign('company_id')->references('id')->on('companies');
+            $table->foreign('company_id')->references('id')->on('companies');*/
             $table->timestamps();
         });
     }
