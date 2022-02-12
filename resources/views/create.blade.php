@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    @extends('layouts.app')
+    @section('content')
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,7 +33,7 @@
             <div class="user_id"/>
                 <h2>userID</h2>
                     <input type="tel" name="question[user_id]"
-                    placeholder="userID" value="{{old('question.user_id') }}"/>
+                    placeholder="userID" value="{{old('question.user_id',Auth::user()->id) }}"/>
                     <p class="user_id_error" style="color:red">{{ $errors->first('question.user_id') }}</p>
                 </div>
             <div class="company_id"/>
@@ -59,4 +61,5 @@
             }
             </script>
     </body>
+    @endsection
 </html>

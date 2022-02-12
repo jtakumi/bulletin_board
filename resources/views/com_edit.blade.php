@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    @extends('layouts.app')
+    @section('content')
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +10,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+        
     </head>
     <body>
         <h1>面接質問投稿掲示板_企業編集画面</h1>
@@ -15,8 +18,7 @@
         <form action="/companies/{{$company->id}}" method="POST">
             @csrf
             @method('PUT')
-             <form action="/companies/{{ $company->id }}" id="for
-         m_delete" method="post">
+             <form action="/companies/{{ $company->id }}" id="form_delete" method="post">
                 @csrf
                 @method('DELETE')
                 <p class="delete">[<span onclick="return deletePost(this);">削除</span>]</p>
@@ -65,5 +67,6 @@
             }
             </script>
         </body>
+        @endsection
     </div>
 </html>

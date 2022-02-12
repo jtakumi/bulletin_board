@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    @extends('layouts.app')
+    
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,6 +15,7 @@
     <!--表示領域-->
     <body>
         <h1>面接質問投稿掲示板_トップページ</h1>
+        @section('content')
         <div class "questions">
             @foreach ($questions as $question)
             <div class= 'question'>
@@ -27,9 +30,12 @@
             {{ $questions->links() }}
           </div>
         </div>
+        @endsection
+        <div class='pages'>
         <p class="login">[<a heaf="/login">ログイン</a>]</p>
         <p class='create'>[<a href='/questions/create'>質問投稿</a>]</p>
         <p class=com_index>[<a href='/companies/com_index'>登録企業一覧</a>]</p>
         <p class=com_create>[<a href='/companies/com_create/'>企業登録</a>]</p>
+        </div>
     </body>
 </html>

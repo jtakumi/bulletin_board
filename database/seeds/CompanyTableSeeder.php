@@ -12,7 +12,7 @@ class CompanyTableSeeder extends Seeder
      */
     public function run()
     {
-          $client = new \GuzzleHttp\Client();
+         /* $client = new \GuzzleHttp\Client();
         
         $url='https://job.yahooapis.jp/v1/furusato/company/?appid=dj00aiZpPTNQeTY1eVdmOTNMZiZzPWNvbnN1bWVyc2VjcmV0Jng9Yjg-';
         $respose=$client->request(
@@ -26,6 +26,6 @@ class CompanyTableSeeder extends Seeder
                 'address'=>$result['prefecture']]);    
             
             
-        }
+        }*/
     }
 }
