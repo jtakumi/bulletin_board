@@ -12,8 +12,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1>面接質問掲示板_質問閲覧</h1>
-        <p class="login">[<a heaf="/login">ログイン</a>]</p>
+        <h1>面接質問掲示板_質問詳細閲覧画面</h1>
         <p class="edit">[<a href="/questions/{{ $question->id }}/edit">編集</a>]</p>
          <form action="/questions/{{ $question->id }}" id="form_delete" method="post">
                 @csrf
@@ -21,11 +20,16 @@
                 <p class="delete">[<span onclick="return deletePost(this);">削除</span>]</p>
                 </form>
         <div class='questions'>
+            「質問」
             <h2 class='questionText'>{{ $question->questionText}}</h2>
+            「質問に対する回答」
             <p class='answer'>{{ $question->answer }}</p>
+            「面接官の反応」
             <p class='feedback'>{{ $question->feedback }}</p>
+            「UserID」
             <p class='user_id'>{{ $question->user_id}}</p>
-            <p class='company_id'>{{ $question->company_id }}</p>
+            「企業名」
+            <p class='company_id'>{{ $question->company->name }}</p>
                 <p class='update_at'>{{ $question->update_at}}</p>
             </div>
         <p class='create2'>[<a href='/questions/create'>質問投稿</a>]</p>

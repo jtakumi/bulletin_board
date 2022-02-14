@@ -3,12 +3,14 @@
 namespace App;
 
 use App\Company;
+use App\Occupation;
+use App\Industry;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 class Question extends Model
 {
     protected $fillable =[
-        'name',
+        'questionText',
         'answer',
         'feedback',
         'user_id',
@@ -23,5 +25,15 @@ class Question extends Model
     public function company()
     {
         return $this->belongsTo('App\Company');
+    }
+    
+    public function occupation()
+    {
+        return $this->belongsTo('App\Occupation');
+    }
+    
+    public function industry()
+    {
+        return $this->belongsTo('App\Industry');
     }
 }

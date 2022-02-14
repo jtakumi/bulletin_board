@@ -9,14 +9,18 @@ use App\Http\Requests\CompanyRequest;
 
 class CompanyController extends Controller
 {
-    public function index(Company $company)
+    public function index(Company $company,Industry $industry, Occupation $occupation)
     {
-        return view('com_index')->with(['companies' => $company->getPaginateByLimit()]);    
+        return view('com_index')->with(['companies' => $company->getPaginateByLimit(),
+        'industry' => $industry->get(),
+        'occupation' => $occupation->get()]);    
     }
 
-    public function show(Company $company)
+    public function show(Company $company,Industry $industry, Occupation $occupation)
     {
-        return view('com_show')->with(['companies' => $company]);
+        return view('com_show')->with(['company' => $company,
+        'industry' => $industry->get(),
+        'occupation' => $occupation->get()]);
     }
 
     public function create(Industry $industry, Occupation $occupation)
@@ -31,21 +35,23 @@ class CompanyController extends Controller
         $company->fill($input)->save();
         return redirect('/companies/' . $company->id);
     }
-    public function edit(Company $Company)
+    public function edit(Company $Company,Industry $industry, Occupation $occupation)
     {
-        return view('com_edit')->with(['companies' => $company]);
+        return view('com_edit')->with(['company' => $company,
+        'industries' => $industry->get(),
+        'occupations' => $occupation->get()]);
     }
     
     public function update(Company $company,CompanyRequest $request)
     {
-          $input = $request['companies'];
+          $input = $request['company'];
         $company->fill($input)->save();
         return redirect('/companies/' . $company->id);
     }
     public function delete(Company $company)
     {
         $company->delete();
-        return redirect('/');
+        return redirect('/companies/com_index');
     }
 }
 

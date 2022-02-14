@@ -61,9 +61,9 @@ class QuestionController extends Controller
     return view('index')->with(['questions' => $question->getPaginateByLimit()]);
     }
     
-    public function show(Question $question)
+    public function show(Question $question,Company $company)
     {
-    return view('show')->with(['questions' => $question]);
+    return view('show')->with(['question' => $question,'company' => $company->get()]);
     }
 
     public function create(Company $company)
@@ -73,19 +73,20 @@ class QuestionController extends Controller
     
     public function store(Question $question,QuestionRequest $request )
     {
-        $input = $request['questions'];
+        $input = $request['question'];
         $question->fill($input)->save();
         return redirect('/questions/' . $question->id);
     }
     
-    public function edit(Question $question)
+    public function edit(Question $question,Company $company)
     {
-        return view('edit')->with(['questions' => $question]);
+        return view('edit')->with(['question' => $question,
+        'companies' => $company->get()]);
     }
     
     public function update(Question $question,QuestionRequest $request)
     {
-          $input = $request['questions'];
+          $input = $request['question'];
         $question->fill($input)->save();
         return redirect('/questions/' . $question->id);
     }
