@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Company;
+use App\Question;
 
 class Industry extends Model
 {
@@ -11,5 +12,8 @@ class Industry extends Model
     {
         return $this->hasOne('App\Company');
     }
-    
+     public function Question()
+    {
+        return $this->hasMany('App\Question');
+    }
 }

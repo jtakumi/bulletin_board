@@ -10,7 +10,6 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href={{ asset('/public/css/index.css') }}/>
     </head>
     <!--表示領域-->
     <body>
@@ -19,12 +18,14 @@
         <div class "questions">
             @foreach ($questions as $question)
             <div class= 'question'>
+                「質問」
                 <h2 class= 'questionText' >
                     <a href="/questions/{{$question->id}}">{{$question->questionText}}</a>
                 </h2>
+                「質問への回答」
                 <p class= 'answer'>{{$question->answer}}</p>
+                <form action="/questions/{{ $question->id }}" id="form_{{ $question->id}}">
             </div>
-            <form action="/questions/{{ $question->id }}" id="form_{{ $question->id}}">
             @endforeach
             <div class='paginate'>
             {{ $questions->links() }}

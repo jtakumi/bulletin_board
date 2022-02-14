@@ -21,11 +21,11 @@ class Company extends Model
     }
     public function Industry()
     {
-        return $this->belongTo('App\Industry');
+        return $this->belongsTo('App\Industry');
     }
     public function Occupation()
     {
-        return $this->belongTo('App\Occupation');
+        return $this->belongsTo('App\Occupation');
     }
     public function Question()
     {

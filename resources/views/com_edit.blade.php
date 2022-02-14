@@ -50,7 +50,8 @@
                     @endforeach
                 </select>
             </div>
-                <input type="submit" value="企業情報投稿"/>
+            <br>
+                <input type="submit" value="企業情報編集"/>
             </form>
                 <p class='create'>[<a href='/questions/create'>質問投稿</a>]</p>
                 <p class='com_index'>[<a href='/companies/com_index'>登録企業一覧</a>]</p>

@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\LoginWithGoogleController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +22,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');*/
 
+Route::get('/auth/google',[LoginWithGoogleController::class, 'redirectToGoogle',]);
+Route::get('/auth/google/callback',[LoginWithGoogleController::class, 'handleGoogleCallback',]);
 Route::group(['middleware' => ['auth']],function(){
     Route::get('/','QuestionController@index');
     Route::get('/companies/com_index','CompanyController@index');
@@ -39,6 +41,10 @@ Route::group(['middleware' => ['auth']],function(){
     Route::delete('/companies/{company}','CompanyController@delete');
     Auth::routes();
 });
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 

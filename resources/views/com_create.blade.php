@@ -13,7 +13,6 @@
     </head>
     <body>
         <h1>面接質問投稿掲示板_企業登録</h1>
-        <p class="login">[<a heaf="/login">ログイン</a>]</p>
         <form action="/companies/" method="POST">
             @csrf
             <div class="name">
