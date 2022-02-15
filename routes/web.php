@@ -22,8 +22,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');*/
 
-Route::get('/auth/google',[LoginWithGoogleController::class, 'redirectToGoogle',]);
-Route::get('/auth/google/callback',[LoginWithGoogleController::class, 'handleGoogleCallback',]);
+Route::get('/login/google','LoginWithGoogleController@getGoogleRedirect');
+Route::get('/login/google/callback','LoginWithGoogleController@authGoogleCallback');
 Route::group(['middleware' => ['auth']],function(){
     Route::get('/','QuestionController@index');
     Route::get('/companies/com_index','CompanyController@index');
@@ -45,9 +45,3 @@ Route::group(['middleware' => ['auth']],function(){
 Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
