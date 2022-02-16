@@ -35,7 +35,7 @@ class CompanyController extends Controller
         $company->fill($input)->save();
         return redirect('/companies/' . $company->id);
     }
-    public function edit(Company $Company,Industry $industry, Occupation $occupation)
+    public function edit(Company $company,Industry $industry, Occupation $occupation)
     {
         return view('com_edit')->with(['company' => $company,
         'industries' => $industry->get(),

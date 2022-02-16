@@ -14,24 +14,18 @@
     </head>
     <body>
         <h1>面接質問投稿掲示板_企業編集画面</h1>
-        <p class="login">[<a heaf="/login">ログイン</a>]</p>
         <form action="/companies/{{$company->id}}" method="POST">
             @csrf
             @method('PUT')
-             <form action="/companies/{{ $company->id }}" id="form_delete" method="post">
-                @csrf
-                @method('DELETE')
-                <p class="delete">[<span onclick="return deletePost(this);">削除</span>]</p>
-                </form>
                <div class="name">
                 <h2>企業名</h2>
-                    <input type="text" name="company[name]" placeholder="応募企業名" value="{{old('company.name') }}"/>
+                    <input type="text" name="company[name]" placeholder="応募企業名" value="{{$company->name }}"/>
                     <p class="name_error" style="color:red">{{ $errors->first('company.name') }}</p>
                 </div>
             
             <div class="address">
                 <h2>住所</h2>
-                <input type="text" name="company[address]" placeholder="会社の本社の住所" value="{{ old('company.address') }}"/>
+                <input type="text" name="company[address]" placeholder="会社の本社の住所" value="{{ $company->address }}"/>
                 <p class="address_error" style="color:red">{{ $errors->first('company.address') }}</p>
             </div>
             <div class="industry_id">

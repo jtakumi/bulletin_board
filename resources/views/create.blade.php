@@ -28,13 +28,7 @@
                 <h2>面接官の反応</h2>
                 <textarea name="question[feedback]" placeholder="面接官の反応"/>{{old('question.feedback') }}</textarea>
                 <p class="feedback_error" style="color:red">{{ $errors->first('question.feedback') }}</p>
-                </div>
-            <div class="user_id"/>
-                <h2>userID</h2>
-                    <input type="tel" name="question[user_id]"
-                    placeholder="userID" value="{{old('question.user_id',Auth::user()->id) }}"/>
-                    <p class="user_id_error" style="color:red">{{ $errors->first('question.user_id') }}</p>
-                </div>
+            </div>
             <div class="company_id"/>
                 <h2>企業</h2>
                     <select name="question[company_id]">
@@ -42,7 +36,7 @@
                     <option value="{{ old('question.company_id',$company->id) }} ">{{ $company->name }}</option>
                     @endforeach
                     </select>
-                </div>
+            </div>
             </div>
             <input type="submit" value="質問投稿"/>
                 </form>

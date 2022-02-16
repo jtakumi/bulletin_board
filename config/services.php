@@ -33,7 +33,7 @@ return [
     'google' => [
         'client_id' => env('GOOGLE_CLIENT_ID'),
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
-        'redirect' => env('GOOGLE_REDIRECT_URL') ,
+        'redirect' => "https://2da6cccde75945a6882d767a0c025c72.vfs.cloud9.us-east-1.amazonaws.com/login/google/callback",
         ]
 
 ];

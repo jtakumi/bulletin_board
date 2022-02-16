@@ -13,9 +13,9 @@
     </head>
     <!--表示領域-->
     <body>
-        <h1>面接質問投稿掲示板_トップページ</h1>
         @section('content')
-        <div class "questions">
+        <h1>面接質問投稿掲示板_トップページ</h1>
+        <div class="questions">
             @foreach ($questions as $question)
             <div class= 'question'>
                 「質問」
@@ -31,12 +31,9 @@
             {{ $questions->links() }}
           </div>
         </div>
-        @endsection
-        <div class='pages'>
-        <p class="login">[<a heaf="/login">ログイン</a>]</p>
         <p class='create'>[<a href='/questions/create'>質問投稿</a>]</p>
         <p class=com_index>[<a href='/companies/com_index'>登録企業一覧</a>]</p>
         <p class=com_create>[<a href='/companies/com_create/'>企業登録</a>]</p>
-        </div>
     </body>
+    @endsection
 </html>

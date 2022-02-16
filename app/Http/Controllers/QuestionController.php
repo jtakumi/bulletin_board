@@ -74,6 +74,7 @@ class QuestionController extends Controller
     public function store(Question $question,QuestionRequest $request )
     {
         $input = $request['question'];
+        $input['user_id']=auth()->user()->id;
         $question->fill($input)->save();
         return redirect('/questions/' . $question->id);
     }

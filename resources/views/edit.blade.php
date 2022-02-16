@@ -27,8 +27,9 @@
             </div>
             <div class="feedback">
                 <h2>面接官の反応</h2>
-                <input type="textarea" name="question[feedback]" placeholder="面接官の反応"/>{{$question->feedback }}</textarea>
-                </div>
+                <textarea type="text" name="question[feedback]" placeholder="面接官の反応">
+                    {{$question->feedback }}</textarea>
+                    </div>
                 <div class="user_id"/>
                 <h2>userID</h2>
                     <input type="tel" name="question[user_id]"

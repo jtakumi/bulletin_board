@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 use Socialite;
 use App\User;
 use Illuminate\Support\Facades\Auth;
@@ -19,13 +20,13 @@ class LoginWithGoogleController extends Controller
     public function loginGoogleCallback()
     {
      $googleUser=Socialite::driver('google')->stateless()->user();
-     $user=User::where('email0',$googleUser->email)->first();
+     $user=User::where('email',$googleUser->email)->first();
      
      if($user==NULL)
      {
          $user=$this->createUserByGoogle($googleUser);
      }
-        Auth::login('$user',true);
+        Auth::login($user,true);
         return redirect('/');
     }
     
