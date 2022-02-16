@@ -32,10 +32,10 @@
             <div class='paginate'>
                 {{ $companies->links() }}
                 </div>
-         @endsection
         </div>
         <p class='create'>[<a href='/questions/create'>質問投稿</a>]</p>
         <p class=com_create>[<a href='/companies/com_create/'>企業登録</a>]</p>
         <p class='index'>[ <a href="/">トップページへ</a>]</p>
+        @endsection
     </body>
 </html>

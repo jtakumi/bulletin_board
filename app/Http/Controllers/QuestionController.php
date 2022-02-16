@@ -58,12 +58,12 @@ class QuestionController extends Controller
             $url,);
             $results=json_decode($respose->getBody(),true);*/
         
-    return view('index')->with(['questions' => $question->getPaginateByLimit()]);
+        return view('index')->with(['questions' => $question->getPaginateByLimit()]);
     }
     
     public function show(Question $question,Company $company)
     {
-    return view('show')->with(['question' => $question,'company' => $company->get()]);
+        return view('show')->with(['question' => $question,'company' => $company->get()]);
     }
 
     public function create(Company $company)
@@ -87,7 +87,8 @@ class QuestionController extends Controller
     
     public function update(Question $question,QuestionRequest $request)
     {
-          $input = $request['question'];
+        $input = $request['question'];
+        $input['user_id']=auth()->user()->id;
         $question->fill($input)->save();
         return redirect('/questions/' . $question->id);
     }

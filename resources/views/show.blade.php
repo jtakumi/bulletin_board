@@ -26,8 +26,6 @@
             <p class='answer'>{{ $question->answer }}</p>
             「面接官の反応」
             <p class='feedback'>{{ $question->feedback }}</p>
-            「UserID」
-            <p class='user_id'>{{ $question->user_id}}</p>
             「企業名」
             <p class='company_id'>{{ $question->company->name }}</p>
                 <p class='update_at'>{{ $question->update_at}}</p>
