@@ -10,7 +10,6 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
-        
     </head>
     <body>
         <h1>面接質問投稿掲示板_企業編集画面</h1>

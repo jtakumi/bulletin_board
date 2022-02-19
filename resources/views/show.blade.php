@@ -29,7 +29,7 @@
             「企業名」
             <p class='company_id'>{{ $question->company->name }}</p>
                 <p class='update_at'>{{ $question->update_at}}</p>
-            </div>
+        </div>
         <p class='create2'>[<a href='/questions/create'>質問投稿</a>]</p>
         <p class='com_index'>[<a href='/companies/com_index'>登録企業一覧</a>]</p>
         <p class=com_create>[<a href='/companies/com_create/'>企業登録</a>]</p>

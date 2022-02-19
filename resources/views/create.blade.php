@@ -39,7 +39,7 @@
             </div>
             </div>
             <input type="submit" value="質問投稿"/>
-                </form>
+            </form>
                 <p class=com_create>[<a href='/companies/com_create/'>企業登録</a>]</p>
                 <p class='com_index'>[<a href='/companies/com_index'>登録企業一覧</a>]</p>
                  <p class='index2'>[<a href="/">トップページへ</a>]</p>
