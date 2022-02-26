@@ -27,14 +27,9 @@
             </div>
             <div class="feedback">
                 <h2>面接官の反応</h2>
-                <input type="textarea" name="question[feedback]" placeholder="面接官の反応"/>{{$question->feedback }}</textarea>
-                </div>
-                <div class="user_id"/>
-                <h2>userID</h2>
-                    <input type="tel" name="question[user_id]"
-                    placeholder="userID" value="{{old('question.user_id',Auth::user()->id) }}"/>
-                    <p class="user_id_error" style="color:red">{{ $errors->first('question.user_id') }}</p>
-                </div>
+                <textarea type="text" name="question[feedback]" placeholder="面接官の反応">
+                    {{$question->feedback }}</textarea>
+                    </div>
             <div class="company_id"/>
                 <h2>企業</h2>
                     <select name="question[company_id]">
@@ -48,7 +43,7 @@
             <p class='com_index'>[<a href='/companies/com_index'>登録企業一覧</a>]</p>
                 <p class=com_create>[<a href='/companies/com_create/'>企業登録</a>]</p>
           <div class='footer'>
-        <a href="/">トップページへ</a>
+        [<a href="/">トップページへ</a>]
         </div>
         </body>
         @endsection

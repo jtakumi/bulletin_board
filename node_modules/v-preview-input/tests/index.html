@@ -1,0 +1,33 @@
+<html>
+<head>
+    <div id="app">
+        <input type="file" accept="image/*" v-preview-input="profileImage" @ready="onPreviewReady"><br>
+        <img :src="profileImage">
+        <hr>
+        <input type="file" accept="image/*" v-preview-input="profileImages" @ready="onPreviewReady" multiple><br>
+        <img v-for="profileImage in profileImages" :src="profileImage">
+    </div>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>
+<script src="../src/v-preview-input.js"></script>
+<script>
+
+    new Vue({
+        el: '#app',
+        data: {
+            profileImage: null,
+            profileImages: []
+        },
+        methods: {
+            onPreviewReady(e) {
+
+                console.log('The preview images are ready!')
+
+            }
+        }
+    })
+
+</script>
+</body>
+</html>
