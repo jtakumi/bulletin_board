@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>面接質問掲示板_企業詳細閲覧画面</h1>
-        <p class="edit">[<a href="/campanies/{{ $company->id }}com_edit">企業編集</a>]</p>
+        <p class="edit">[<a href="/companies/{{ $company->id }}/com_edit">企業編集</a>]</p>
          <form action="/companies/{{ $company->id }}" id="form_delete" method="post">
                 @csrf
                 @method('DELETE')
