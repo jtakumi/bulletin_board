@@ -25,14 +25,14 @@ class QuestionController extends Controller
 
     public function create(Company $company,Question $question)
     {
+        $auths=Auth::id();
         return view('create')->with(['companies' => $company->get(),
-        'question[user_id]' => auth()->id()]);
+        'auths' =>$auths]);
     }
     
     public function store(Question $question,QuestionRequest $request )
     {
         $input = $request['question'];
-        $input['user_id']=auth()->user()->id();
         $question->fill($input)->save();
         return redirect('/questions/' . $question->id);
     }
@@ -40,7 +40,6 @@ class QuestionController extends Controller
     public function edit(Question $question,Company $company)
     {
         return view('edit')->with(['question' => $question,
-        'question[user_id]' =>auth()->id(),
         'companies' => $company->get()]);
     }
     

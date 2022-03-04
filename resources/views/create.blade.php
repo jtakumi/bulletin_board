@@ -29,6 +29,11 @@
                 <textarea name="question[feedback]" placeholder="面接官の反応"/>{{old('question.feedback') }}</textarea>
                 <p class="feedback_error" style="color:red">{{ $errors->first('question.feedback') }}</p>
             </div>
+            <div class="user_id">
+                <h2>UserId(readonly)</h2>
+                 <input type="text" name="question[user_id]"  value="{{ Auth::id() }}"　readonly/>
+                <p class="user_id_error" style="color:red">{{ $errors->first('question.user_id') }}</p>
+                </div>
             <div class="company_id"/>
                 <h2>企業</h2>
                     <select name="question[company_id]">
