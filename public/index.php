@@ -59,4 +59,3 @@ $response->send();
 
 $kernel->terminate($request, $response);
 
-$require('vendor/autoload.php');
