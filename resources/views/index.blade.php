@@ -34,6 +34,8 @@
         <p class='create'>[<a href='/questions/create'>質問投稿</a>]</p>
         <p class=com_index>[<a href='/companies/com_index'>登録企業一覧</a>]</p>
         <p class=com_create>[<a href='/companies/com_create/'>企業登録</a>]</p>
+        <br>
+        <p class='notice'>[<a href='/notice'>お問い合わせフォーム</a>]</p>
     </body>
     @endsection
 </html>

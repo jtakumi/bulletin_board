@@ -18,6 +18,9 @@
             問い合わせフォーム
             </button>
         </a>
+        <p class='create'>[<a href='/questions/create'>質問投稿</a>]</p>
+        <p class=com_index>[<a href='/companies/com_index'>登録企業一覧</a>]</p>
+        <p class=com_create>[<a href='/companies/com_create/'>企業登録</a>]</p>
     </body>
 @endsection
 </html>

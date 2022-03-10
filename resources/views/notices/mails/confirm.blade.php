@@ -19,14 +19,18 @@
             <div class="subject">
                 <h2>subject</h2>
                 <p>{{ $viewData['postData']['subject'] }}</p>
-                <p class="subject_error" style=color:red>{{$error->first('subject')}}</p>
+                <input type='hidden' name='subject' value="{{ $viewData['postData']['subject'] }}">
             </div>
+            <div class='content'>
             <h2>content</h2>
-                <textarea name="content" placeholder="please input content" cols="30" rows="10!">{{ old('content') }}</textarea>
-                <p class="content_error" style=color:red>{{$error->first('content')}}</p>
+            <p>{{!! nl2br(e($viewData['postData']['content'])) !!}}</p>
+                <input type='hidden' name='content' value="{{ $viewData['postData']['content'] }}">
             </div>
-            <input type="submit" value="確認画面へ"/>
+            <input type="submit" value="送信"/>
         </form>
+        <p class='create'>[<a href='/questions/create'>質問投稿</a>]</p>
+        <p class=com_index>[<a href='/companies/com_index'>登録企業一覧</a>]</p>
+        <p class=com_create>[<a href='/companies/com_create/'>企業登録</a>]</p>
     </body>
 @endsection
 </html>
