@@ -33,6 +33,7 @@ class NoticeRequest extends FormRequest
     {
         return[
             'subject-required' => 'Please confilm e-mail subject.',
-            'content-required' => 'Please confilm e-mail content.']
+            'content-required' => 'Please confilm e-mail content.',
+            ];
     }
 }
