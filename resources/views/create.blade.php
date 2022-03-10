@@ -22,11 +22,11 @@
             </div>
             <div class="answer">
                 <h2>質問への解答</h2>
-                <textarea name="question[answer]" placeholder="質問への解答">{{ old('question.answer') }}</textarea>
+                <textarea name="question[answer]" placeholder="質問への解答" cols="30" rows="10">{{ old('question.answer') }}</textarea>
                 <p class="answer_error" style="color:red">{{ $errors->first('question.answer') }}</p>
             <div class="feedback">
                 <h2>面接官の反応</h2>
-                <textarea name="question[feedback]" placeholder="面接官の反応"/>{{old('question.feedback') }}</textarea>
+                <textarea name="question[feedback]" placeholder="面接官の反応" cols="30" rows="10">{{old('question.feedback') }}</textarea>
                 <p class="feedback_error" style="color:red">{{ $errors->first('question.feedback') }}</p>
             </div>
             <div class="user_id">

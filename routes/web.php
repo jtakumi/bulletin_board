@@ -21,9 +21,10 @@ Route::delete('/posts/{post}','PostController@delete');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');*/
-
+//google login function
 Route::get('/login/google','LoginWithGoogleController@getGoogleRedirect');
 Route::get('/login/google/callback','LoginWithGoogleController@loginGoogleCallback');
+//permission accesess only logined user
 Route::group(['middleware' => ['auth']],function(){
     Route::get('/','QuestionController@index');
     Route::get('/companies/com_index','CompanyController@index');
@@ -39,6 +40,12 @@ Route::group(['middleware' => ['auth']],function(){
     Route::put('/companies/{company}','CompanyController@update');
     Route::delete('/questions/{question}','QuestionController@delete');
     Route::delete('/companies/{company}','CompanyController@delete');
+    //mail function
+    Route::get('/notice','NoticeController@index')->name('notice.index');
+    Route::get('/notice/mail/make','NoticeController@mailMake')->name('notice.mail.make');
+    Route::post('/notice/mail/confirm','NoticeController@mailConfirm')->name('notice.mail.confirm');
+    Route::post('/notice/mail/send','NoticeController@mailSend')->name('notice.mail.send');
+
     Auth::routes();
 });
 
