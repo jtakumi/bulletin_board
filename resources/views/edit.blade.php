@@ -22,12 +22,12 @@
             </div>
             <div class="answer">
                 <h2>質問への解答</h2>
-                <textarea type="text" name="question[answer]" placeholder="質問への解答">
+                <textarea type="text" name="question[answer]" placeholder="質問への解答" cols="30" rows="10">
                  {{ $question->answer}} </textarea>
             </div>
             <div class="feedback">
                 <h2>面接官の反応</h2>
-                <textarea type="text" name="question[feedback]" placeholder="面接官の反応">
+                <textarea type="text" name="question[feedback]" placeholder="面接官の反応" cols="30" rows="10">
                     {{$question->feedback }}</textarea>
                     </div>
             <div class="company_id"/>

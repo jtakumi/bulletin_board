@@ -132,5 +132,7 @@ return [
     */
 
     'log_channel' => env('MAIL_LOG_CHANNEL'),
-
+    
+    'mailgun'=>['domain'=>'your-mailgun-domain','secret'=>'your-mailgun-key'],
+    'from'=>['address'=>'example@example.com','name'=> '面接質問投稿掲示板'],
 ];
