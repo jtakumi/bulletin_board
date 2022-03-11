@@ -10,7 +10,11 @@ Route::group(['middleware' => ['auth']],function(){
     Route::get('/companies/com_index','CompanyController@index');
     Route::get('/companies/com_create','CompanyController@create');
     Route::get('/questions/create','QuestionController@create');
+    //heroku error 対策
+    Route::get('/questions/','QuestionController@store');
     Route::post('/questions/','QuestionController@store');
+    //heroku error 対策
+    Route::get('/companies/','CompanyController@store');
     Route::post('/companies/','CompanyController@store');
     Route::get('/questions/{question}/edit','QuestionController@edit');
     Route::get('/companies/{company}/com_edit','CompanyController@edit');
