@@ -11,10 +11,10 @@ Route::group(['middleware' => ['auth']],function(){
     Route::get('/companies/com_create','CompanyController@create');
     Route::get('/questions/create','QuestionController@create');
     //heroku error 対策
-    Route::get('/questions/','QuestionController@store');
+    //Route::get('/questions/','QuestionController@store');
     Route::post('/questions/','QuestionController@store');
     //heroku error 対策
-    Route::get('/companies/','CompanyController@store');
+    //Route::get('/companies/','CompanyController@store');
     Route::post('/companies/','CompanyController@store');
     Route::get('/questions/{question}/edit','QuestionController@edit');
     Route::get('/companies/{company}/com_edit','CompanyController@edit');
@@ -25,6 +25,7 @@ Route::group(['middleware' => ['auth']],function(){
     Route::delete('/questions/{question}','QuestionController@delete');
     Route::delete('/companies/{company}','CompanyController@delete');
     //mail function
+    Route::get('/notice','NoticeController@test')->name('notice.test');
     Route::get('/notice','NoticeController@index')->name('notice.index');
     Route::get('/notice/mail/make','NoticeController@mailMake')->name('notice.mail.make');
     Route::post('/notice/mail/confirm','NoticeController@mailConfirm')->name('notice.mail.confirm');

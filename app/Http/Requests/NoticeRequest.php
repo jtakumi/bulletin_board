@@ -10,11 +10,12 @@ class NoticeRequest extends FormRequest
      * Determine if the user is authorized to make this request.
      *
      * @return bool
-     */
+     
     public function authorize()
     {
         return true;
     }
+    */
 
     /**
      * Get the validation rules that apply to the request.
@@ -25,7 +26,6 @@ class NoticeRequest extends FormRequest
     {
         return [
             'subject' => 'required',
-            'content' => 'required',
         ];
     }
     
@@ -33,7 +33,6 @@ class NoticeRequest extends FormRequest
     {
         return[
             'subject-required' => 'Please confilm e-mail subject.',
-            'content-required' => 'Please confilm e-mail content.',
             ];
     }
 }

@@ -9,6 +9,15 @@ use App\Mail\AppMail;
 
 class NoticeController extends Controller
 {
+   public function test()
+   {
+      $data=[];
+      Mail::send('email.test',$data,function($message)
+      {
+         $message->to('testlaravel715@gmail.com','test')
+                  ->subject('this is a test mail.');
+      });
+   }
    public function index()
    {
        return view('notices.index');
