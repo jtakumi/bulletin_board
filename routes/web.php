@@ -25,12 +25,11 @@ Route::group(['middleware' => ['auth']],function(){
     Route::delete('/questions/{question}','QuestionController@delete');
     Route::delete('/companies/{company}','CompanyController@delete');
     //mail function
-    Route::get('/notice','NoticeController@test')->name('notice.test');
     Route::get('/notice','NoticeController@index')->name('notice.index');
     Route::get('/notice/mail/make','NoticeController@mailMake')->name('notice.mail.make');
     Route::post('/notice/mail/confirm','NoticeController@mailConfirm')->name('notice.mail.confirm');
     Route::post('/notice/mail/send','NoticeController@mailSend')->name('notice.mail.send');
-
+    #ログイン中のユーザーを認識
     Auth::routes();
 });
 

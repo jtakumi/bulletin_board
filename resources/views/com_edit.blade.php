@@ -29,6 +29,7 @@
             </div>
             <div class="industry_id">
                 <h2>業界</h2>
+                //プルダウンメニュー
                 <select name="company[industry_id]">
                     @foreach($industries as $industry)
                       <option value="{{ old('company.industry_id',$industry->id) }} ">{{ $industry->name }}</option>
@@ -37,6 +38,7 @@
             </div>
             <div class="occupation_id">
                 <h2>職種</h2>
+                //プルダウンメニュー
                 <select name="company[occupation_id]">
                     @foreach($occupations as $occupation)
                       <option value="{{ old('company.occupation_id',$occupation->id) }} ">{{ $occupation->name }}</option>
@@ -50,6 +52,7 @@
                 <p class='com_index'>[<a href='/companies/com_index'>登録企業一覧</a>]</p>
            <p class='index2'>[ <a href="/">トップページへ</a>]</p>
            
+            #最終確認
              <script>
             function deletePost(e)
             {

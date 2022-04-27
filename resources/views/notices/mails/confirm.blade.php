@@ -15,17 +15,19 @@
         <form action="{{ route('notice.mail.send') }}" method="post">
         @csrf
         <h1>面接質問投稿掲示板_お問い合わせフォーム_確認画面</h1>
-            
+            //メールの題名
             <div class="subject">
                 <h2>subject</h2>
                 <p>{{ $viewData['postData']['subject'] }}</p>
                 <input type='hidden' name='subject' value="{{ $viewData['postData']['subject'] }}">
             </div>
+            //本文
             <div class='content'>
             <h2>content</h2>
             <p>{{!! nl2br(e($viewData['postData']['content'])) !!}}</p>
                 <input type='hidden' name='content' value="{{ $viewData['postData']['content'] }}">
             </div>
+            //送信ボタン
             <input type="submit" value="送信"/>
         </form>
         <p class='create'>[<a href='/questions/create'>質問投稿</a>]</p>

@@ -21,20 +21,26 @@
                 </form>
         <div class='questions'>
             「質問」
+            //質問の題名をquestion_tableで取得して表示
             <h2 class='questionText'>{{ $question->questionText}}</h2>
             「質問に対する回答」
+            //質問の返答をquestion_tableで取得して表示
             <p class='answer'>{{ $question->answer }}</p>
             「面接官の反応」
+            //面接官の反応をquestion_tableで取得して表示
             <p class='feedback'>{{ $question->feedback }}</p>
             「企業名」
+            //企業名をcompany_tableで取得して表示
             <p class='company_id'>{{ $question->company->name }}</p>
                 <p class='update_at'>{{ $question->update_at}}</p>
         </div>
+        //リンク集
         <p class='create2'>[<a href='/questions/create'>質問投稿</a>]</p>
         <p class='com_index'>[<a href='/companies/com_index'>登録企業一覧</a>]</p>
         <p class=com_create>[<a href='/companies/com_create/'>企業登録</a>]</p>
         <div class='footer'>
             [<a href="/">トップページへ</a>]
+            //削除前の最終確認
             <script>
             function deletePost(e)
             {

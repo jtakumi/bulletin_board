@@ -21,15 +21,20 @@
                 </form>
         <div class='companies'>
             「企業名」
+            //company_tableからidとnameを取得
             <h2 class='name'>{{ $company->name}}</h2>
             「本社の住所」
+            //company_tableからaddressを取得
             <p class='address'>{{ $company->address }}</p>
             「業界」
+            //company_tableからindustryを取得してnameを照合する
             <p class='industry_id'>{{ $company->industry->name }}</p>
             「職種」
+            //company_tableからoccupationを取得してnameを照合する
             <p class='occupation_id'>{{ $company->occupation->name}}</p>
                 <p class='update_at'>{{ $company->update_at}}</p>
             </div>
+        //リンク集
         <p class='create'>[<a href='/questions/create'>質問投稿</a>]</p>
         <p class='com_index'>[<a href='/companies/com_index'>登録企業一覧</a>]</p>
         <p class=com_create>[<a href='/companies/com_create/'>企業登録</a>]</p>

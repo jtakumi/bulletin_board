@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+//お問い合わせフォームのindex
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 @extends('layouts.app')
 <head>
@@ -13,11 +14,13 @@
 @section('content')
     <body>
         <h2>面接質問投稿掲示板_お問い合わせフォーム</h2>
+        //お問い合わせフォームへのリンクとボタン
             <a href="{{ route('notice.mail.make') }}">
             <button>
             問い合わせフォーム
             </button>
         </a>
+        //リンク集
         <p class='create'>[<a href='/questions/create'>質問投稿</a>]</p>
         <p class=com_index>[<a href='/companies/com_index'>登録企業一覧</a>]</p>
         <p class=com_create>[<a href='/companies/com_create/'>企業登録</a>]</p>

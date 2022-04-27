@@ -16,17 +16,21 @@
         @csrf
         <h1>面接質問投稿掲示板_お問い合わせフォーム_本文作成</h1>
             
+            //メールの題名
             <div class="subject">
                 <h2>subject</h2>
                 <input type="text" name="subject" placeholder="please input subject" value="{{ old('subject') }}" >
                 <p class="subject_error" style=color:red>{{$errors->first('subject')}}</p>
             </div>
+            //本文
             <h2>content</h2>
                 <textarea name="content" placeholder="please input content" cols="30" rows="10!">{{ old('content') }}</textarea>
                 <p class="content_error" style=color:red>{{$errors->first('content')}}</p>
             </div>
+            //送信ボタン
             <input type="submit" value="確認画面へ"/>
         </form>
+        //リンク集
         <p class='create'>[<a href='/questions/create'>質問投稿</a>]</p>
         <p class=com_index>[<a href='/companies/com_index'>登録企業一覧</a>]</p>
         <p class=com_create>[<a href='/companies/com_create/'>企業登録</a>]</p>

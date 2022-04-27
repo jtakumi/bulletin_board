@@ -20,10 +20,12 @@
             <div class= 'question'>
                 「質問」
                 <h2 class= 'questionText' >
+                    //質問の題名をquestion_tableから取得
                     <a href="/questions/{{$question->id}}">{{$question->questionText}}</a>
                 </h2>
                 「質問への回答」
                 <p class= 'answer'>{{$question->answer}}</p>
+                //返答を取得
                 <form action="/questions/{{ $question->id }}" id="form_{{ $question->id}}">
             </div>
             @endforeach
@@ -31,6 +33,7 @@
             {{ $questions->links() }}
           </div>
         </div>
+        //リンク集
         <p class='create'>[<a href='/questions/create'>質問投稿</a>]</p>
         <p class=com_index>[<a href='/companies/com_index'>登録企業一覧</a>]</p>
         <p class=com_create>[<a href='/companies/com_create/'>企業登録</a>]</p>
